@@ -9,9 +9,7 @@
         </div>
             </div>
             <ul>
-                <li>Card 4</li>
-                <li>Card 1</li>
-                <li>Card 2</li>
+              <li v-for="task in notStartedTasks" :key="task.id">{{ task.title }}</li>
             </ul>
             <span class="addnew"> <NuxtLink to="/new">New +</NuxtLink> </span>
         </div>
@@ -83,3 +81,39 @@
     }
 
 </style>
+
+<script>
+import { ref, onMounted } from 'vue'; // Import ref and onMounted from Vue
+
+export default {
+  data() {
+    return {
+      tasks: []
+    };
+  },
+  setup() {
+    const notStartedTasks = ref([]);
+
+    const fetchTasks = async () => {
+      try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/todos');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        notStartedTasks.value = data.filter(task => task.completed === false);
+      } catch (error) {
+        console.error('Error fetching tasks:', error);
+      }
+    };
+
+    onMounted(() => {
+      fetchTasks();
+    });
+
+    return {
+      notStartedTasks
+    };
+  }
+};
+</script>

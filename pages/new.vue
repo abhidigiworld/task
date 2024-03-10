@@ -3,19 +3,19 @@
       <h1>Create Task</h1>
       <form @submit.prevent="createTask" class="form">
         <div class="form-group">
-          <label for="title">Title:</label>
+          <label for="title">Task Title:</label>
           <input type="text" id="title" v-model="title" required class="input-field" />
         </div>
         <div class="form-group">
-          <label for="description">Description:</label>
+          <label for="description"> Task Description:</label>
           <textarea id="description" v-model="description" required class="input-field"></textarea>
         </div>
         <div class="form-group">
-          <label for="status">Status:</label>
+          <label for="status">Status of Task:</label>
           <select id="status" v-model="status" class="input-field">
-            <option value="not started">Not Started</option>
-            <option value="in progress">In Progress</option>
-            <option value="completed">Completed</option>
+            <option value="Not Started">Not Started</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
           </select>
         </div>
         <button type="submit" class="btn-create">Create Task</button>
@@ -34,11 +34,34 @@
     },
     methods: {
       createTask() {
-        console.log('Creating task:', { title: this.title, description: this.description, status: this.status });
-        this.title = '';
-        this.description = '';
-        this.status = 'not started';
+  fetch('https://jsonplaceholder.typicode.com/todos', {
+    method: 'POST',
+    body: JSON.stringify({
+      title: this.title,
+      description: this.description,
+      status: this.status
+    }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
       }
+      return response.json();
+    })
+    .then(json => {
+      console.log('Task created successfully:', json);
+      this.title = '';
+      this.description = '';
+      this.status = 'not started';
+    })
+    .catch(error => {
+      console.error('Error creating task:', error);
+    });
+}
+
     }
   };
   </script>
@@ -50,7 +73,7 @@
   }
   
   .form {
-    background-color: #f9f9f9;
+    background-color: #282727b9;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -72,7 +95,7 @@
   }
   
   .btn-create {
-    background-color: #007bff;
+    background-color: #11460c;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -81,7 +104,7 @@
   }
   
   .btn-create:hover {
-    background-color: #0056b3;
+    background-color: #0f4d0ac1;
   }
   </style>
   

@@ -2,25 +2,21 @@
     <div>
         <div class="card">
             <div class="topcardbox">
-                <span class="heading">In Progress</span><span class="count">3</span>
+                <span class="heading">In Progress</span><span class="count">2</span>
                 <div class="sidemenu">
             <span>---</span>
             <span class="addnew"> <NuxtLink to="/new">+</NuxtLink> </span>
         </div>
             </div>
             <ul>
-                <li>Card 4</li>
+                <li>quo adipisci enim quam ut ab</li>
+                <li>totam quia non</li>
             </ul>
             <span class="addnew"><NuxtLink to="/new">+ New</NuxtLink> </span>
         </div>
     </div>
 </template>
 
-<!-- <script>
-    export default{
-        props:['cardname']
-    }
-</script> -->
 
 <style scoped>
     .topcardbox{
