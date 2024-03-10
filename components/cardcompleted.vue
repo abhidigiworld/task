@@ -2,7 +2,7 @@
     <div>
         <div class="card">
             <div class="topcardbox">
-                <span class="heading">Not Started</span><span class="count">3</span>
+                <span class="heading">Completed</span><span class="count">3</span>
                 <div class="sidemenu">
             <span>---</span>
             <span class="addnew"> <NuxtLink to="/new">+</NuxtLink> </span>
@@ -13,16 +13,10 @@
                 <li>Card 1</li>
                 <li>Card 2</li>
             </ul>
-            <span class="addnew"> <NuxtLink to="/new">New +</NuxtLink> </span>
+            <span class="addnew"><NuxtLink to="/new">+ New</NuxtLink> </span>
         </div>
     </div>
 </template>
-
-<!-- <script>
-    export default{
-        props:['cardname']
-    }
-</script> -->
 
 <style scoped>
     .topcardbox{
@@ -43,7 +37,7 @@
         margin-left: 150px;
     }
     .heading{
-        background-color: lightcoral;
+        background-color: rgba(92, 190, 68, 0.636);
         padding: .2rem;
         border-radius: 5px;
     }
@@ -75,6 +69,7 @@
         font-weight: bold;
         color: grey;
         padding-left: .5rem;
+        text-decoration: none;
     }
 
     a{

@@ -2,7 +2,7 @@
     <div>
         <div class="card">
             <div class="topcardbox">
-                <span class="heading">Not Started</span><span class="count">3</span>
+                <span class="heading">In Progress</span><span class="count">3</span>
                 <div class="sidemenu">
             <span>---</span>
             <span class="addnew"> <NuxtLink to="/new">+</NuxtLink> </span>
@@ -10,10 +10,8 @@
             </div>
             <ul>
                 <li>Card 4</li>
-                <li>Card 1</li>
-                <li>Card 2</li>
             </ul>
-            <span class="addnew"> <NuxtLink to="/new">New +</NuxtLink> </span>
+            <span class="addnew"><NuxtLink to="/new">+ New</NuxtLink> </span>
         </div>
     </div>
 </template>
@@ -43,7 +41,7 @@
         margin-left: 150px;
     }
     .heading{
-        background-color: lightcoral;
+        background-color: rgba(209, 183, 76, 0.659);
         padding: .2rem;
         border-radius: 5px;
     }
@@ -76,7 +74,6 @@
         color: grey;
         padding-left: .5rem;
     }
-
     a{
         text-decoration: none;
         color: grey;

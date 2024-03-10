@@ -1,8 +1,8 @@
 <template>
     <div>
-        <card cardname="Not Started"/>
-        <card cardname="In Progress"/>
-        <card cardname="Completed"/>
+        <card />
+        <cardinprogress />
+        <cardcompleted />
     </div>
 </template>
 
