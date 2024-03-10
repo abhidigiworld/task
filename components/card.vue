@@ -9,7 +9,7 @@
         </div>
             </div>
             <ul>
-              <li v-for="task in notStartedTasks" :key="task.id">{{ task.title }}</li>
+              <li v-for="task in notStartedTasks" :key="task.id" draggable="true">{{ task.title }}</li>
             </ul>
             <span class="addnew"> <NuxtLink to="/new">New +</NuxtLink> </span>
         </div>

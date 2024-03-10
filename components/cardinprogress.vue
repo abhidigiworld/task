@@ -9,8 +9,8 @@
         </div>
             </div>
             <ul>
-                <li>quo adipisci enim quam ut ab</li>
-                <li>totam quia non</li>
+                <li draggable="true">quo adipisci enim quam ut ab</li>
+                <li draggable="true">totam quia non</li>
             </ul>
             <span class="addnew"><NuxtLink to="/new">+ New</NuxtLink> </span>
         </div>
