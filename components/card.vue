@@ -2,7 +2,7 @@
     <div>
         <div class="card">
             <div class="topcardbox">
-                <span class="heading">Not Started</span><span class="count">3</span>
+                <span class="heading">Not Started</span><span class="count">{{ notStartedTasks.length }}</span>
                 <div class="sidemenu">
             <span>---</span>
             <span class="addnew"> <NuxtLink to="/new">+</NuxtLink> </span>
